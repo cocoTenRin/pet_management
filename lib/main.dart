@@ -1,22 +1,47 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // 상태 변경이 없는 위젯. 한번 UI가 그려지면 그대로 있음.
+  static const String _title = 'Flutter Code Sample';
+
   @override
   Widget build(BuildContext context) {
-    var imageUrl = "lib\img\IMG_20150111_135850.JPG";
-    // UI를 만드는 부분.
-    return new MaterialApp(
-      // 구글 기본 디자인인 Material Design을 써서 앱을 만든다.
-      title: '플러터 앱',
-      home: Scaffold(
-          appBar: AppBar(title: Text("pet List")), // 앱의 상단 타이틀
-          body: Center(
-            child: Image.asset("imgs/IMG_20150111_135850.JPG"),
+    return MaterialApp(
+      title: 'chat used firebase',
+      theme: ThemeData(primaryColor: Colors.white),
+      home: DefaultTabController(
+          length: 4,
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text('ペット管理'),
+            ),
+            body: TabBarView(
+              children: [
+                Text('홈 스크린'),
+                Text('채팅 스크린'),
+                Text('마이 스크린'),
+                Text('ㅇㅇ')
+              ],
+            ),
+            bottomNavigationBar: TabBar(tabs: [
+              Tab(
+                icon: Icon(Icons.app_registration),
+                text: '記録',
+              ),
+              Tab(
+                icon: Icon(Icons.calendar_view_week_sharp),
+                text: 'カレンダー',
+              ),
+              Tab(
+                icon: Icon(Icons.list),
+                text: 'ペット一覧',
+              ),
+              Tab(
+                icon: Icon(Icons.app_registration_sharp),
+                text: '登録',
+              )
+            ]),
           )),
     );
   }
