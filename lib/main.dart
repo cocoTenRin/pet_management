@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pet_magament/screen/petList.dart';
 
 import 'Widget/bottom_bar.dart';
+import 'Widget/calendar.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +28,7 @@ class _MyAppState extends State<MyApp> {
             physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
               PetList(),
-              Container(child: Center(child: Text('홈')),),
+              Calendar(),
               Container(child: Center(child: Text('홈')),),
               Container(child: Center(child: Text('홈')),),
             ],

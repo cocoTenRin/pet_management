@@ -30,11 +30,11 @@ class Topbar extends StatelessWidget {
             height: 25,
           ),
           Container(
-              padding: EdgeInsets.only(right: 1),
-              child: Text(
-                '펫 일람',
-                style: TextStyle(fontSize: 14),
-              ),
+            padding: EdgeInsets.only(right: 1),
+            child: Text(
+              '펫 일람',
+              style: TextStyle(fontSize: 14),
+            ),
           ),
         ],
       ),
