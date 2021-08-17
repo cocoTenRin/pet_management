@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'package:pet_management/screen/petAdd.dart';
 
 class PetList extends StatefulWidget {
   _PetList createState() => _PetList();
@@ -17,26 +20,26 @@ class _PetList extends State<PetList> {
 }
 
 class Topbar extends StatelessWidget {
+  List<String> petList = <String>['coco', 'ten', 'rin'];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(20, 7, 20, 7),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Image.asset(
-            'imgs/IMG_20150111_135850.JPG',
-            fit: BoxFit.contain,
-            height: 25,
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 1),
-            child: Text(
-              '펫 일람',
-              style: TextStyle(fontSize: 14),
-            ),
-          ),
+    return Scaffold(
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children:<Widget>[
+            Container(child: Text('s')),
+            Container(child: Text('s')),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (context) => petAdd()));
+        },
+        tooltip: '테스트',
+        label: Text('펫 추가'),
+        icon: Icon(Icons.add),
       ),
     );
   }

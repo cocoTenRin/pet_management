@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pet_magament/screen/petList.dart';
+import 'package:pet_management/model/db.dart';
+import 'package:pet_management/screen/petList.dart';
 
 import 'Widget/bottom_bar.dart';
 import 'Widget/calendar.dart';
@@ -17,19 +19,22 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Pet',
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primaryColor: Colors.black,
         accentColor: Colors.white,
       ),
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
+
           body: TabBarView(
             physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
               PetList(),
               Calendar(),
-              Container(child: Center(child: Text('홈')),),
+              Container(
+                child: Text('a'),
+              ),
               Container(child: Center(child: Text('홈')),),
             ],
           ),
@@ -39,3 +44,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+

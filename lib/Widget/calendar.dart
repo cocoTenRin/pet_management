@@ -13,7 +13,7 @@ class _Calendar extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
+      padding: EdgeInsets.fromLTRB(20, 30, 20, 7),
       child: Stack(
         children: <Widget>[
           TableCalendar(

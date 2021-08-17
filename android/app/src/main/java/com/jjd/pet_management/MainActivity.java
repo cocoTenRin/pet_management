@@ -1,4 +1,4 @@
-package com.example.pet_magament;
+package com.jjd.pet_management;
 
 import io.flutter.embedding.android.FlutterActivity;
 
